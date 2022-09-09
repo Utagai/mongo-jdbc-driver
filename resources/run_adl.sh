@@ -134,6 +134,7 @@ check_mongohoused() {
 # check if mac or linux
 if [ $OS = "Linux" ]; then
   distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
+	echo "DISTRO IS $distro"
   if [ "$distro" = "\"Red Hat Enterprise Linux\"" ] ||
 [ "$distro" = "\"Red Hat Enterprise Linux Server\"" ]; then
     export VARIANT=rhel7
