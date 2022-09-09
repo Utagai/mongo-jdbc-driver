@@ -58,6 +58,8 @@ TIMEOUT=120
 MONGO_DOWNLOAD_BASE=https://fastdl.mongodb.org
 # Ubuntu 18.04
 MONGO_DOWNLOAD_UBUNTU=mongodb-linux-x86_64-ubuntu1804-5.0.4.tgz
+# Debian 10 (Buster) 
+MONGO_DOWNLOAD_DEBIAN=mongodb-linux-x86_64-debian10-5.0.4.tgz
 # RedHat 7
 MONGO_DOWNLOAD_REDHAT=mongodb-linux-x86_64-rhel70-5.0.4.tgz
 # macOS
@@ -145,9 +147,9 @@ if [ $OS = "Linux" ]; then
     MONGO_DOWNLOAD_LINK=$MONGO_DOWNLOAD_BASE/linux/$MONGO_DOWNLOAD_UBUNTU
     MONGO_DOWNLOAD_FILE=$MONGO_DOWNLOAD_UBUNTU
   elif [ "$distro" = "\"Debian GNU/Linux\"" ]; then
-    export VARIANT=ubuntu1804
-    MONGO_DOWNLOAD_LINK=$MONGO_DOWNLOAD_BASE/linux/$MONGO_DOWNLOAD_UBUNTU
-    MONGO_DOWNLOAD_FILE=$MONGO_DOWNLOAD_UBUNTU
+    export VARIANT=debian10
+    MONGO_DOWNLOAD_LINK=$MONGO_DOWNLOAD_BASE/linux/$MONGO_DOWNLOAD_DEBIAN
+    MONGO_DOWNLOAD_FILE=$MONGO_DOWNLOAD_DEBIAN
   else
     echo ${distro} not supported
     exit 1
