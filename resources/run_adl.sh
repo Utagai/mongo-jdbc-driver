@@ -143,6 +143,10 @@ if [ $OS = "Linux" ]; then
     export VARIANT=ubuntu1804
     MONGO_DOWNLOAD_LINK=$MONGO_DOWNLOAD_BASE/linux/$MONGO_DOWNLOAD_UBUNTU
     MONGO_DOWNLOAD_FILE=$MONGO_DOWNLOAD_UBUNTU
+  elif [ "$distro" = "\"Debian GNU/Linux\"" ]; then
+    export VARIANT=ubuntu1804
+    MONGO_DOWNLOAD_LINK=$MONGO_DOWNLOAD_BASE/linux/$MONGO_DOWNLOAD_UBUNTU
+    MONGO_DOWNLOAD_FILE=$MONGO_DOWNLOAD_UBUNTU
   else
     echo ${distro} not supported
     exit 1
