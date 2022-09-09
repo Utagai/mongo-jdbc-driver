@@ -207,7 +207,7 @@ def getGitVersion() {
 def getAbbreviatedGitVersion() {
     def out = new ByteArrayOutputStream()
     exec {
-        commandLine 'git', 'describe', '--abbrev=0'
+        commandLine 'git', 'rev-parse', 'HEAD'
         standardOutput = out
     }
     out.toString().substring(1).trim()
